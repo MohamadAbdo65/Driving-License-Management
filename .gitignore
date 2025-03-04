@@ -1,0 +1,17 @@
+# Visual Studio related files
+.vs/
+*.suo
+*.user
+*.cache
+*.pdb
+*.log
+
+# Build files
+bin/
+obj/
+Debug/
+Release/
+
+# NuGet packages
+packages/
+project.lock.json

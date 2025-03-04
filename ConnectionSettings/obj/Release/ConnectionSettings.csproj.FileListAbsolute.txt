@@ -1,0 +1,6 @@
+D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\bin\Release\ConnectionSettings.dll
+D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\bin\Release\ConnectionSettings.pdb
+D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Release\ConnectionSettings.csproj.AssemblyReference.cache
+D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Release\ConnectionSettings.csproj.CoreCompileInputs.cache
+D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Release\ConnectionSettings.dll
+D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Release\ConnectionSettings.pdb

@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D41E740-7779-4ED8-888C-DC9A8EAD6045}|DVLD_Manage.csproj|d:\\raod map !!\\p \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\dvld_manage\\classapplications\\manage applications\\local driving license application\\frmmanagelocaldrivinglicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D41E740-7779-4ED8-888C-DC9A8EAD6045}|DVLD_Manage.csproj|solutionrelative:classapplications\\manage applications\\local driving license application\\frmmanagelocaldrivinglicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D41E740-7779-4ED8-888C-DC9A8EAD6045}|DVLD_Manage.csproj|d:\\raod map !!\\p \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\dvld_manage\\classapplications\\manage applications\\local driving license application\\cnmnstmanageapplication\\testsforms\\visiontest\\frmvisiontestappoitment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D41E740-7779-4ED8-888C-DC9A8EAD6045}|DVLD_Manage.csproj|solutionrelative:classapplications\\manage applications\\local driving license application\\cnmnstmanageapplication\\testsforms\\visiontest\\frmvisiontestappoitment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D41E740-7779-4ED8-888C-DC9A8EAD6045}|DVLD_Manage.csproj|d:\\raod map !!\\p \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\dvld_manage\\classapplications\\manage applications\\local driving license application\\cnmnstmanageapplication\\testsforms\\visiontest\\frmvisiontestappoitment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D41E740-7779-4ED8-888C-DC9A8EAD6045}|DVLD_Manage.csproj|solutionrelative:classapplications\\manage applications\\local driving license application\\cnmnstmanageapplication\\testsforms\\visiontest\\frmvisiontestappoitment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 213,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmManageLocalDrivingLicenseApplication.cs",
+              "DocumentMoniker": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\ClassApplications\\Manage Applications\\Local Driving License Application\\frmManageLocalDrivingLicenseApplication.cs",
+              "RelativeDocumentMoniker": "ClassApplications\\Manage Applications\\Local Driving License Application\\frmManageLocalDrivingLicenseApplication.cs",
+              "ToolTip": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\ClassApplications\\Manage Applications\\Local Driving License Application\\frmManageLocalDrivingLicenseApplication.cs",
+              "RelativeToolTip": "ClassApplications\\Manage Applications\\Local Driving License Application\\frmManageLocalDrivingLicenseApplication.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAcwMYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T16:56:33.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmVisionTestAppoitment.cs",
+              "DocumentMoniker": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs",
+              "RelativeDocumentMoniker": "ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs",
+              "ToolTip": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs*",
+              "RelativeToolTip": "ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T14:23:00.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmVisionTestAppoitment.cs [Design]",
+              "DocumentMoniker": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs",
+              "RelativeDocumentMoniker": "ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs",
+              "ToolTip": "D:\\Raod map !!\\P \u0627\u0644\u0643\u0648\u0631\u0633 \u0627\u0644\u062A\u0627\u0633\u0639 \u0639\u0634\u0631\\DVLD_Manage\\ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs [Design]*",
+              "RelativeToolTip": "ClassApplications\\Manage Applications\\Local Driving License Application\\CnMnStManageApplication\\TestsForms\\VisionTest\\frmVisionTestAppoitment.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T14:20:02.044Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

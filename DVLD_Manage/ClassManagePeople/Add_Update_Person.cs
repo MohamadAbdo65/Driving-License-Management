@@ -1,8 +1,8 @@
 ﻿using DVLD_BusinussLayer;
-using DVLDLogger;
 using Guna.UI2.WinForms;
 using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -79,6 +79,8 @@ namespace DVLD_Manage
         private void _FillCombboxCountry()
         {
             DataTable dataTable = clsCountries.GetAllCountries();
+
+            List<clsCountr> AllCountries = clsCountries.GetAllCountries();
 
             foreach (DataRow T in dataTable.Rows)
             {

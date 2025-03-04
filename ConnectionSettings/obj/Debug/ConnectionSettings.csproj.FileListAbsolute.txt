@@ -1,6 +1,0 @@
-D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\bin\Debug\ConnectionSettings.dll
-D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\bin\Debug\ConnectionSettings.pdb
-D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Debug\ConnectionSettings.csproj.AssemblyReference.cache
-D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Debug\ConnectionSettings.csproj.CoreCompileInputs.cache
-D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Debug\ConnectionSettings.dll
-D:\Raod map !!\P الكورس التاسع عشر\ConnectionSettings\obj\Debug\ConnectionSettings.pdb

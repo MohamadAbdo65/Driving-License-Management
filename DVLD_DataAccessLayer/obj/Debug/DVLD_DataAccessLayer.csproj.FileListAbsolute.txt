@@ -1,9 +1,0 @@
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\bin\Debug\DVLD_DataAccessLayer.dll
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\bin\Debug\DVLD_DataAccessLayer.pdb
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\bin\Debug\ConnectionSettings.dll
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\bin\Debug\ConnectionSettings.pdb
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.csproj.AssemblyReference.cache
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.csproj.CoreCompileInputs.cache
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\obj\Debug\DVLD_Dat.5E8DE79F.Up2Date
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.dll
-D:\Raod map !!\P الكورس التاسع عشر\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.pdb

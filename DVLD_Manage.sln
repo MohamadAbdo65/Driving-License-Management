@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_DataAccessLayer", "DVL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_Manage", "DVLD_Manage\DVLD_Manage.csproj", "{2D41E740-7779-4ED8-888C-DC9A8EAD6045}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVLD_API", "DVLD_API\DVLD_API.csproj", "{766140FC-51C7-4D4C-B154-24BCBF290E71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2D41E740-7779-4ED8-888C-DC9A8EAD6045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D41E740-7779-4ED8-888C-DC9A8EAD6045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D41E740-7779-4ED8-888C-DC9A8EAD6045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766140FC-51C7-4D4C-B154-24BCBF290E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766140FC-51C7-4D4C-B154-24BCBF290E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766140FC-51C7-4D4C-B154-24BCBF290E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766140FC-51C7-4D4C-B154-24BCBF290E71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

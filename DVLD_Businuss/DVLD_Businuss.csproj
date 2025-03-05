@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DVLD_Data\DVLD_Data.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DVLD_BusinussLayer\DVLD_BusinussLayer.csproj" />
-    <ProjectReference Include="..\DVLD_DataAccessLayer\DVLD_DataAccessLayer.csproj" />
+    <ProjectReference Include="..\DVLD_Businuss\DVLD_Businuss.csproj" />
+    <ProjectReference Include="..\DVLD_Data\DVLD_Data.csproj" />
   </ItemGroup>
 
 </Project>

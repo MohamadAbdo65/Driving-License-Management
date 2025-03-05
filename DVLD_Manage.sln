@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionSettings", "Conne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_BusinussLayer", "DVLD_BusinussLayer\DVLD_BusinussLayer.csproj", "{29978021-BFE0-438F-BF55-2014531FD620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_DataAccessLayer", "DVLD_DataAccessLayer\DVLD_DataAccessLayer.csproj", "{CA8A55C6-9662-448D-9240-27C33DD6F9DC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_Manage", "DVLD_Manage\DVLD_Manage.csproj", "{2D41E740-7779-4ED8-888C-DC9A8EAD6045}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVLD_API", "DVLD_API\DVLD_API.csproj", "{766140FC-51C7-4D4C-B154-24BCBF290E71}"
@@ -17,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVLD_Data", "DVLD_Data\DVLD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVLD_Businuss", "DVLD_Businuss\DVLD_Businuss.csproj", "{883A4D2B-4E61-4C3C-883D-0598668D6253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_ConnectionSettings", "DVLD_ConnectionSettings\DVLD_ConnectionSettings.csproj", "{D567D6A6-64CC-43C9-9004-39A5CE2ECDE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVLD_ConnectionSettings", "DVLD_ConnectionSettings\DVLD_ConnectionSettings.csproj", "{D567D6A6-64CC-43C9-9004-39A5CE2ECDE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{29978021-BFE0-438F-BF55-2014531FD620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29978021-BFE0-438F-BF55-2014531FD620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29978021-BFE0-438F-BF55-2014531FD620}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA8A55C6-9662-448D-9240-27C33DD6F9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA8A55C6-9662-448D-9240-27C33DD6F9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA8A55C6-9662-448D-9240-27C33DD6F9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA8A55C6-9662-448D-9240-27C33DD6F9DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D41E740-7779-4ED8-888C-DC9A8EAD6045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D41E740-7779-4ED8-888C-DC9A8EAD6045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D41E740-7779-4ED8-888C-DC9A8EAD6045}.Release|Any CPU.ActiveCfg = Release|Any CPU

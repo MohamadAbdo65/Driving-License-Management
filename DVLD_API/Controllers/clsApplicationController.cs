@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DVLD_BusinussLayer;
-using DVLD_DataAccessLayer;
+using DVLD_Businuss;
+using DVLD_Data;
 
 namespace DVLD_API.Controllers
 {

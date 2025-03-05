@@ -600,12 +600,6 @@
     <None Include="Resources\icons8-account-35.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DVLD_BusinussLayer\DVLD_BusinussLayer.csproj">
-      <Project>{29978021-bfe0-438f-bf55-2014531fd620}</Project>
-      <Name>DVLD_BusinussLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="icons8-worker-id-card-48.ico" />
     <Content Include="Resources\Female.png" />
     <Content Include="Resources\Male.png" />

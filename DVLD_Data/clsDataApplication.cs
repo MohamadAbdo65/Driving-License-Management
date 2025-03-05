@@ -74,10 +74,13 @@ namespace DVLD_Data
                 var AllApplications = new List<clsApplicationsDTO>();
 
                 string StConnection = clsConnectionSettingsDVLD.ConnectionString;
+
                 using (SqlConnection connection = new SqlConnection(StConnection))
                 {
                     using (SqlCommand command = new SqlCommand("SP_Applications_GetAll", connection))
                     {
+                    command.CommandType = CommandType.StoredProcedure;
+
                         try
                         {
                             connection.Open();

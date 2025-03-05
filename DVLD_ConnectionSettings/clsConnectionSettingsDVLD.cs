@@ -1,19 +1,24 @@
-﻿namespace DVLD_ConnectionSettings
+﻿using Microsoft.Win32;
+
+namespace DVLD_ConnectionSettings
 {
     public class clsConnectionSettingsDVLD
     {
-       // public static string? ConnectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION");
+       // public static string? ConnectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_DVLD");
 
         //Temporarily
         public static string? ConnectionString
         {
             get
             {
-                string? cs = Environment.GetEnvironmentVariable("DATABASE_CONNECTION");
+                string registryPath = @"Environment";
+                string valueName = "DATABASE_CONNECTION_DVLD";
 
-                if (cs != null) return cs + "; TrustServerCertificate=True;";
+                string CS = Registry.GetValue(@"HKEY_CURRENT_USER\" + registryPath, valueName, null) as string;
 
-                else return cs;
+                if (CS != null) return (CS + "; TrustServerCertificate=True;");
+
+                else return CS;
             }
         }
     }

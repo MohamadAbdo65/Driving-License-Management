@@ -29,11 +29,11 @@ namespace DVLD_Data
         public string Phone { get; set; }
         public string Email { get; set; }
         public int NationalityCountryID { get; set; }
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
 
         public clsPeopleDTO(int ID, string NationalNO, string FirstName, string SecondName, string ThirdName,
         string LastName, DateTime DateOfBirth, int Gender, string Address, string Phone, string Email,
-         int NationalityCountryID, string PathImage)
+         int NationalityCountryID, string? PathImage)
         {
             this.PersonID = ID;
             this.FirstName = FirstName;
@@ -78,21 +78,27 @@ namespace DVLD_Data
                         {
                             if (reader.Read())
                             {
-                                Person.NationalNo = (string)reader["NationalNo"];
-                                Person.FirstName = (string)reader["FirstName"];
-                                Person.SecondName = (string)reader["SecondName"];
-                                Person.ThirdName = (string)reader["ThirdName"];
-                                Person.LastName = (string)reader["LastName"];
-                                Person.DateOfBirth = (DateTime)reader["DateOfBirth"];
-                                Person.Gender = (int)reader["Gender"];
-                                Person.Address = (string)reader["Address"];
-                                Person.Phone = (string)reader["Phone"];
-                                Person.Email = (string)reader["Email"];
-                                Person.NationalityCountryID = (int)reader["NationalityCountryID"];
-
+                                string? ImgPath = null;
                                 if (reader["ImagePath"] != DBNull.Value)
-                                    Person.ImagePath = (string)reader["ImagePath"];
+                                    ImgPath = (string)reader["ImagePath"];
 
+                                Person = new clsPeopleDTO(
+                                    PersonID ,
+                                    (string)reader["NationalNo"] ,
+                                    (string)reader["FirstName"],
+                                    (string)reader["SecondName"],
+                                    (string)reader["ThirdName"] ,
+                                    (string)reader["LastName"] ,
+                                    (DateTime)reader["DateOfBirth"] ,
+                                    (int)reader["Gender"] ,
+                                    (string)reader["Address"] ,
+                                    (string)reader["Phone"] ,
+                                    (string)reader["Email"] ,
+                                    (int)reader["NationalityCountryID"] , 
+                                    ImgPath
+                                    );
+
+                              
                             }
                             else
                             {

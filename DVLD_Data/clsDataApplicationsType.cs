@@ -76,7 +76,7 @@ namespace DVLD_Data
                                     applicationType = new clsApplicationTypeDTO(
                                         (int)reader["ID"],
                                         (string)reader["Title"],
-                                        (int)reader["Fees"]
+                                        Convert.ToInt32(reader["Fees"])
                                     );
                                 }
                             }

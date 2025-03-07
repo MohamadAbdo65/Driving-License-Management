@@ -58,5 +58,44 @@ namespace DVLD_API.Controllers
 
             return CreatedAtRoute("GetApplicationByID" , new {ID = applications.ApplicationID} , applications);
         }
+
+        [HttpPut("Update", Name = "UpdateApplicationByID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<clsApplicationsDTO> UpdateApplicationByID(int ApplicationID , clsApplicationsDTO NewData)
+        {
+            if (NewData == null ||
+               //NewData.ApplicationID! < 1 ||
+               NewData.ApplicantPersonID! < 1 ||
+               NewData.ApplicationDate <= DateTime.MinValue ||
+               (NewData.ApplicationTypeID == 7 || NewData.ApplicationTypeID < 1 || NewData.ApplicationTypeID > 8) ||
+               (NewData.ApplicationStatus > 3 || NewData.ApplicationStatus < 1) ||
+               NewData.LastStatusDate <= DateTime.MinValue ||
+               NewData.PaidFees < 0 ||
+               NewData.CreatedByUserID < 0)
+            {
+                return BadRequest("Invalid value");
+            }
+
+            clsApplication application = clsApplication.GetBaseApplication(ApplicationID);
+
+            if (application == null) return NotFound($"Application with ID : {ApplicationID} is Not found.");
+
+            application.ApplicantPersonID = NewData.ApplicantPersonID;
+            application.ApplicationDate = NewData.ApplicationDate;
+            application.ApplicationTypeID = NewData.ApplicationTypeID;
+            application.ApplicationStatus = (clsApplication.enApplicationStatus)NewData.ApplicationStatus;
+            application.LastUpdateStatus = NewData.LastStatusDate;
+            application.PaidFees = NewData.PaidFees;
+            application.CreateByUserID = NewData.CreatedByUserID;
+
+            if (!application.Save()) return StatusCode(500, "Error in Update Application.");
+
+            return Ok(application.ApplicationDTO);
+        }
+
+
     }
 }

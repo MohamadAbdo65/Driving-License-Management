@@ -126,14 +126,16 @@ namespace DVLD_Data
                             {
                                 if (reader.Read())
                                 {
-                                    application.ApplicationID = (int)reader["ApplicationID"];
-                                    application.ApplicantPersonID = (int)reader["ApplicantPersonID"];
-                                    application.ApplicationDate = (DateTime)reader["ApplicationDate"];
-                                    application.ApplicationTypeID = (int)reader["ApplicationTypeID"];
-                                    application.ApplicationStatus = (byte)reader["ApplicationStatus"];
-                                    application.LastStatusDate = (DateTime)reader["LastStatusDate"];
-                                    application.PaidFees = (int)reader["PaidFees"];
-                                    application.CreatedByUserID = (int)reader["CreatedByUserID"];
+                                    application = new clsApplicationsDTO(
+                                    (int)reader["ApplicationID"],
+                                    (int)reader["ApplicantPersonID"],
+                                    (DateTime)reader["ApplicationDate"],
+                                    (int)reader["ApplicationTypeID"],
+                                    (byte)reader["ApplicationStatus"],
+                                    (DateTime)reader["LastStatusDate"],
+                                    (int)reader["PaidFees"],
+                                    (int)reader["CreatedByUserID"]
+                                    );
                                 }
                             }
                         }

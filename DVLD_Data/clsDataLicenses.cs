@@ -5,7 +5,7 @@ using System.Data;
 namespace DVLD_Data
 {
  
-    public class clsLicenseDTO
+    public class clsLicenseDTO : IValidatable
     {
         public int LicenseID { get; set; }
         public int ApplicationID { get; set; }
@@ -45,6 +45,67 @@ namespace DVLD_Data
             IssueReason = issueReason;
             CreatedByUserID = createdByUserID;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (LicenseID <= 0)
+            {
+                ErrorMessage = "License ID is not valid";
+                return false;
+            }
+
+            if (ApplicationID <= 0)
+            {
+                ErrorMessage = "Application ID is not valid";
+                return false;
+            }
+
+            if (DriverID <= 0)
+            {
+                ErrorMessage = "Driver ID is not valid";
+                return false;
+            }
+
+            if (LicenseClass <= 0)
+            {
+                ErrorMessage = "License Class is not valid";
+                return false;
+            }
+
+            if (IssueDate > DateTime.Now)
+            {
+                ErrorMessage = "Issue Date cannot be in the future";
+                return false;
+            }
+
+            if (ExpirationDate <= IssueDate)
+            {
+                ErrorMessage = "Expiration Date must be after the Issue Date";
+                return false;
+            }
+
+            if (PaidFees < 0)
+            {
+                ErrorMessage = "Paid Fees cannot be negative";
+                return false;
+            }
+
+            if (IssueReason == 0)
+            {
+                ErrorMessage = "Issue Reason is not valid";
+                return false;
+            }
+
+            if (CreatedByUserID <= 0)
+            {
+                ErrorMessage = "Created By User ID is not valid";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
     }
 
 

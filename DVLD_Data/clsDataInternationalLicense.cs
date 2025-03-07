@@ -7,7 +7,7 @@ namespace DVLD_Data
 
 
 
-    public class clsInternationalLicenseDTO
+    public class clsInternationalLicenseDTO : IValidatable
     {
         public int InternationalLicenseID { get; set; }
         public int ApplicationID { get; set; }
@@ -38,6 +38,55 @@ namespace DVLD_Data
             IsActive = isActive;
             CreatedByUserID = createdByUserID;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (InternationalLicenseID < 0)
+            {
+                ErrorMessage = "International License ID is not valid";
+                return false;
+            }
+
+            if (ApplicationID < 0)
+            {
+                ErrorMessage = "Application ID is not valid";
+                return false;
+            }
+
+            if (DriverID < 0)
+            {
+                ErrorMessage = "Driver ID is not valid";
+                return false;
+            }
+
+            if (IssuedUsingLocalLicenseID < 0)
+            {
+                ErrorMessage = "Issued Using Local License ID is not valid";
+                return false;
+            }
+
+            if (IssueDate > DateTime.Now)
+            {
+                ErrorMessage = "Issue Date cannot be in the future";
+                return false;
+            }
+
+            if (ExpirationDate <= IssueDate)
+            {
+                ErrorMessage = "Expiration Date must be after the Issue Date";
+                return false;
+            }
+
+            if (CreatedByUserID < 0)
+            {
+                ErrorMessage = "Created By User ID is not valid";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
     }
 
 

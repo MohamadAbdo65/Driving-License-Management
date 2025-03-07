@@ -5,7 +5,7 @@ using System.Data;
 namespace DVLD_Data
 {
 
-    public class clsDetainLicenseDTO
+    public class clsDetainLicenseDTO : IValidatable
     {
         public int DetainID { get; set; }
         public int LicenseID { get; set; }
@@ -20,27 +20,28 @@ namespace DVLD_Data
         public clsDetainLicenseDTO(int detainID, int licenseID, DateTime detainDate, decimal fineFees, int createdByUserID, bool isReleased, DateTime? releaseDate, int? releasedByUserID, int? releaseApplicationID)
 
         {
-
             DetainID = detainID;
-
             LicenseID = licenseID;
-
             DetainDate = detainDate;
-
             FineFees = fineFees;
-
             CreatedByUserID = createdByUserID;
-
             IsReleased = isReleased;
-
             ReleaseDate = releaseDate;
-
             ReleasedByUserID = releasedByUserID;
-
             ReleaseApplicationID = releaseApplicationID;
-
         }
 
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if(this.LicenseID < 0) { ErrorMessage = "License ID is not valid"; return false; }
+            if(this.FineFees < 0) { ErrorMessage = "The amount is not valid";return false; }
+            if(this.CreatedByUserID < 0) { ErrorMessage = "User ID is not vlaid";return false; }
+            if(this.ReleasedByUserID < 0) { ErrorMessage = "User ID is not valid";return false; }
+            if(this.ReleaseApplicationID < 0) { ErrorMessage = "Application ID is not valid";return false; }
+
+            ErrorMessage = null;
+            return true;
+        }
     }
 
 

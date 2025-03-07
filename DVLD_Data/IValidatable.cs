@@ -4,6 +4,6 @@ namespace DVLD_Data
 {
     public interface IValidatable
     {
-        bool IsValid(out string ErrorMessage);
+        bool IsValid(out string? ErrorMessage);
     }
 }

@@ -6,7 +6,7 @@ namespace DVLD_Data
 {
  
 
-    public class clsTestDTO
+    public class clsTestDTO : IValidatable
     {
         public int TestID { get; set; }
         public int TestAppointmentID { get; set; }
@@ -21,6 +21,30 @@ namespace DVLD_Data
             TestResult = testResult;
             Notes = notes;
             CreatedByUserID = createdByUserID;
+        }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (TestID < 0)
+            {
+                ErrorMessage = "Test ID is not valid";
+                return false;
+            }
+
+            if (TestAppointmentID < 0)
+            {
+                ErrorMessage = "Test Appointment ID is not valid";
+                return false;
+            }
+
+            if (CreatedByUserID < 0)
+            {
+                ErrorMessage = "Created By User ID is not valid";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
         }
 
     }

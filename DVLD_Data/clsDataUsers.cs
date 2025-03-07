@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DVLD_Data
 {
-    public class clsUserDTO
+    public class clsUserDTO : IValidatable
     {
         public int UserID { get; set; }
         public int PersonID { get; set; }
@@ -20,6 +20,37 @@ namespace DVLD_Data
             Password = password;
             IsActive = isActive;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (UserID < 0)
+            {
+                ErrorMessage = "User ID is not valid";
+                return false;
+            }
+
+            if (PersonID < 0)
+            {
+                ErrorMessage = "Person ID is not valid";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Username))
+            {
+                ErrorMessage = "Username is required";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                ErrorMessage = "Password is required";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
     }
 
     public static class clsDataUsers

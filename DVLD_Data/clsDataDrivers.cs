@@ -6,7 +6,7 @@ using System.Data;
 namespace DVLD_Data
 {
 
-    public class clsDriverDTO
+    public class clsDriverDTO : IValidatable
     {
         public int DriverID { get; set; }
         public int PersonID { get; set; }
@@ -19,6 +19,16 @@ namespace DVLD_Data
             PersonID = personID;
             CreatedByUserID = createdByUserID;
             CreatedDate = createdDate;
+        }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if(DriverID < 0) { ErrorMessage = "Driver ID is not valid"; return false; }
+            if(PersonID < 0) { ErrorMessage = "Person ID is not valid"; return false; }
+            if(CreatedByUserID < 0) { ErrorMessage = "User ID is not valid"; return false; }
+
+            ErrorMessage = null;
+            return true;
         }
     }
 

@@ -6,7 +6,7 @@ using System.Data;
 namespace DVLD_Data
 {
 
-    public class clsCountryDTO
+    public class clsCountryDTO : IValidatable
     {
         public int CountryID { get; set; }
         public string CountryName { get; set; }
@@ -15,6 +15,14 @@ namespace DVLD_Data
         {
             CountryID = countryID;
             CountryName = countryName;
+        }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (string.IsNullOrEmpty(this.CountryName)) { ErrorMessage = "Country name is not valid"; return false; }
+
+            ErrorMessage = null;
+            return true;
         }
     }
 

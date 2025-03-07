@@ -5,7 +5,7 @@ using System.Data;
 namespace DVLD_Data
 {
 
-    public class clsTestTypeDTO
+    public class clsTestTypeDTO  :IValidatable
     {
         public int TestTypeID { get; set; }
         public string Title { get; set; }
@@ -18,6 +18,30 @@ namespace DVLD_Data
             Title = title;
             Description = description;
             Fees = fees;
+        }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (TestTypeID < 0)
+            {
+                ErrorMessage = "Test Type ID is not valid";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Title))
+            {
+                ErrorMessage = "Title is required";
+                return false;
+            }
+
+            if (Fees < 0)
+            {
+                ErrorMessage = "Fees cannot be negative";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
         }
 
     }

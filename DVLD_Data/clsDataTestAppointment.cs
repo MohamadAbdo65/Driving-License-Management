@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DVLD_Data
 {
-    public class clsTestAppointmentDTO
+    public class clsTestAppointmentDTO : IValidatable
     {
         public int TestAppointmentID { get; set; }
         public int TestTypeID { get; set; }
@@ -25,6 +25,44 @@ namespace DVLD_Data
             CreatedByUserID = createdByUserID;
             IsLocked = isLocked;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (TestAppointmentID < 0)
+            {
+                ErrorMessage = "Test Appointment ID is not valid";
+                return false;
+            }
+
+            if (TestTypeID < 0)
+            {
+                ErrorMessage = "Test Type ID is not valid";
+                return false;
+            }
+
+            if (LocalDrivingLicenseApplicationID < 0)
+            {
+                ErrorMessage = "Local Driving License Application ID is not valid";
+                return false;
+            }        
+
+            if (PaidFees < 0)
+            {
+                ErrorMessage = "Paid Fees cannot be negative";
+                return false;
+            }
+
+            if (CreatedByUserID < 0)
+            {
+                ErrorMessage = "Created By User ID is not valid";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
+
     }
 
     public static class clsDataTestAppointment

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DVLD_Data
 {
-        public class clsApplicationTypeDTO
+        public class clsApplicationTypeDTO : IValidatable
         {
             public int ID { get; set; }
             public string Title { get; set; }
@@ -17,6 +17,14 @@ namespace DVLD_Data
                 Fees = fees;
             }
 
+            public bool IsValid(out string? ErrorMessage)
+            {
+                if(string.IsNullOrEmpty(this.Title)) { ErrorMessage = "Title is not valid"; return false; }
+                if(this.Fees < 0) { ErrorMessage = "The amount is not valid"; return false; }
+
+                ErrorMessage = null;
+                return true;
+            }
         }
 
         public static class clsDataApplicationsType

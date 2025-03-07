@@ -7,7 +7,7 @@ namespace DVLD_Data
    
 
 
-    public class clsLicenseClassDTO
+    public class clsLicenseClassDTO : IValidatable
     {
         public int LicenseClassID { get; set; }
         public string ClassName { get; set; }
@@ -32,6 +32,43 @@ namespace DVLD_Data
             DefaultValidityLength = defaultValidityLength;
             ClassFees = classFees;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (LicenseClassID <= 0)
+            {
+                ErrorMessage = "License Class ID is not valid";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(ClassName))
+            {
+                ErrorMessage = "Class Name is required";
+                return false;
+            }
+
+            if (MinimumAllowedAge < 1)
+            {
+                ErrorMessage = "Minimum Allowed Age must be at least 1";
+                return false;
+            }
+
+            if (DefaultValidityLength < 1)
+            {
+                ErrorMessage = "Default Validity Length must be greater than zero";
+                return false;
+            }
+
+            if (ClassFees < 0)
+            {
+                ErrorMessage = "Class Fees cannot be negative";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
     }
 
     public static class clsDataLicensesClass

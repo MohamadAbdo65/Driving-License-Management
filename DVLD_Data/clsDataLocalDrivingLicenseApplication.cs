@@ -6,7 +6,7 @@ using System.Data;
 namespace DVLD_Data
 {
 
-    public class clsLocalDrivingLicenseApplicationDTO
+    public class clsLocalDrivingLicenseApplicationDTO : IValidatable
     {
         public int LDLAppID { get; set; }
         public int BaseAppID { get; set; }
@@ -18,6 +18,31 @@ namespace DVLD_Data
             BaseAppID = baseAppID;
             LicenseClassID = licenseClassID;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (LDLAppID < 0)
+            {
+                ErrorMessage = "LDL Application ID is not valid";
+                return false;
+            }
+
+            if (BaseAppID < 0)
+            {
+                ErrorMessage = "Base Application ID is not valid";
+                return false;
+            }
+
+            if (LicenseClassID < 0)
+            {
+                ErrorMessage = "License Class ID is not valid";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
     }
 
     public static class clsDataLocalDrivingLicenseApplication

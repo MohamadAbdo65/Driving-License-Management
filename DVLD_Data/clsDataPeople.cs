@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DVLD_Data
 {
-     public class clsPeopleDTO
+     public class clsPeopleDTO : IValidatable
     {
         public int PersonID { get; set; }
         public string NationalNo { get; set; }
@@ -50,6 +50,85 @@ namespace DVLD_Data
             this.NationalityCountryID = NationalityCountryID;
             this.ImagePath = PathImage;
         }
+
+        public bool IsValid(out string? ErrorMessage)
+        {
+            if (PersonID < 0)
+            {
+                ErrorMessage = "Person ID is not valid";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(NationalNo))
+            {
+                ErrorMessage = "National Number is required";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(FirstName))
+            {
+                ErrorMessage = "First Name is required";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(ThirdName))
+            {
+                ErrorMessage = "Third Name is required";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(SecondName))
+            {
+                ErrorMessage = "Second Name is required";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(LastName))
+            {
+                ErrorMessage = "Last Name is required";
+                return false;
+            }
+
+            if (DateOfBirth >= DateTime.Now)
+            {
+                ErrorMessage = "Date of Birth must be in the past";
+                return false;
+            }
+
+            if (Gender != 1 && Gender != 2)
+            {
+                ErrorMessage = "Gender must be 1 (Male) or 2 (Female)";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Address))
+            {
+                ErrorMessage = "Address is required";
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(Phone) && !Phone.All(char.IsDigit))
+            {
+                ErrorMessage = "Phone number must contain only digits";
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(Email) && !Email.Contains("@"))
+            {
+                ErrorMessage = "Email is not valid";
+                return false;
+            }
+
+            if (NationalityCountryID <= 0)
+            {
+                ErrorMessage = "Nationality Country ID is not valid";
+                return false;
+            }
+
+            ErrorMessage = null;
+            return true;
+        }
+
     }
 
 

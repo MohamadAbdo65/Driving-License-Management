@@ -4,7 +4,7 @@ using DVLD_ConnectionSettings;
 
 namespace DVLD_Data
 {
-        public class clsApplicationsDTO
+        public class clsApplicationsDTO : IValidatable
         {
             public int ApplicationID { get; set; }
             public int ApplicantPersonID { get; set; }
@@ -29,6 +29,19 @@ namespace DVLD_Data
                 this.CreatedByUserID = createdByUserID;
             }
 
+            public bool IsValid(out string ErrorMessage)
+            {
+                if (this.ApplicantPersonID < 0) { ErrorMessage = "Person ID is not valid"; return false; }
+                if (this.ApplicationDate < DateTime.MinValue) { ErrorMessage = "Application date is not valid"; return false; }
+                if (this.ApplicationTypeID == 7 || this.ApplicationTypeID < 1 || this.ApplicationTypeID > 8) { ErrorMessage = "Application type ID is not valid"; return false; }
+                if (this.ApplicationStatus < 1 || this.ApplicationStatus > 3) { ErrorMessage = "Application status is not valid"; return false; }
+                if (this.LastStatusDate < DateTime.MinValue) { ErrorMessage = "The Date is not valid"; return false; }
+                if (this.PaidFees < 0) { ErrorMessage = "The amount is not valid"; return false; }
+                if (this.CreatedByUserID < 0) { ErrorMessage = "User ID is not valid"; return false; }
+
+                ErrorMessage = null;
+                return true;
+            }
         }
 
         public static class clsDataApplications

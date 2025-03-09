@@ -27,17 +27,9 @@ namespace DVLD_API.Controllers
         public ActionResult<clsApplicationsDTO> AddNewApplication
             (clsApplicationsDTO applications)
         {
-            if (applications == null || 
-                applications.ApplicationID !< 1 ||
-                applications.ApplicantPersonID !< 1 ||
-                applications.ApplicationDate <= DateTime.MinValue ||
-                (applications.ApplicationTypeID == 7 || applications.ApplicationTypeID < 1 || applications.ApplicationTypeID > 8) ||
-                (applications.ApplicationStatus > 3 || applications.ApplicationStatus <1) ||
-                applications.LastStatusDate <= DateTime.MinValue ||
-                applications.PaidFees < 0 ||
-                applications.CreatedByUserID < 0 )
+            if (!applications.IsValid(out string? ErrorMessage))
             {
-                return BadRequest("Invalid value");
+                return BadRequest(ErrorMessage);
             }
 
             clsApplication NewApplication = new clsApplication(
@@ -66,17 +58,9 @@ namespace DVLD_API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<clsApplicationsDTO> UpdateApplicationByID(int ApplicationID , clsApplicationsDTO NewData)
         {
-            if (NewData == null ||
-               //NewData.ApplicationID! < 1 ||
-               NewData.ApplicantPersonID! < 1 ||
-               NewData.ApplicationDate <= DateTime.MinValue ||
-               (NewData.ApplicationTypeID == 7 || NewData.ApplicationTypeID < 1 || NewData.ApplicationTypeID > 8) ||
-               (NewData.ApplicationStatus > 3 || NewData.ApplicationStatus < 1) ||
-               NewData.LastStatusDate <= DateTime.MinValue ||
-               NewData.PaidFees < 0 ||
-               NewData.CreatedByUserID < 0)
+            if (NewData.IsValid(out string? ErrorMessage))
             {
-                return BadRequest("Invalid value");
+                return BadRequest(ErrorMessage);
             }
 
             clsApplication application = clsApplication.GetBaseApplication(ApplicationID);

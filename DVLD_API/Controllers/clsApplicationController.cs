@@ -11,7 +11,7 @@ namespace DVLD_API.Controllers
         [HttpGet("GetAll", Name = "GetAllApplications")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public ActionResult<IEnumerable<clsApplication>> GetAllApplications()
+        public ActionResult<IEnumerable<clsApplicationsDTO>> GetAllApplications()
         {
             List <clsApplicationsDTO> applications = clsApplication.GetAllApplications();
 
@@ -80,6 +80,19 @@ namespace DVLD_API.Controllers
             return Ok(application.ApplicationDTO);
         }
 
+
+        [HttpDelete("DeleteApplication", Name = "DeleteApplicationByID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult DeleteApplicationByID(int ApplicationID)
+        {
+            if (ApplicationID < 0) return BadRequest($"Not Accepted ID {ApplicationID}");
+
+            if (!clsApplication.Delete(ApplicationID)) return NotFound($"Application with ID : {ApplicationID} Not found");
+
+            return Ok("Deleted successfully");
+        }
 
     }
 }

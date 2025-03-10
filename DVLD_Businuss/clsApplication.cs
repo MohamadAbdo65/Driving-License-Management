@@ -172,7 +172,7 @@ namespace DVLD_Businuss
 
         public bool DoesPersonHaveActiveApp(int ApplicationTypeID)
         {
-            return clsDataApplications.DoesPersonHaveActiveApplication(this.ApplicantPersonID, ApplicationTypeID);
+            return clsApplication.DoesPersonHaveActiveApp(this.ApplicantPersonID , ApplicationTypeID);
         }
 
         public static int GetActiveApplicationID(int PersonID, clsApplication.enApplicationType AppType)

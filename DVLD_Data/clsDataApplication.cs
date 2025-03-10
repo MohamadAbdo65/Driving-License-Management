@@ -225,7 +225,7 @@ namespace DVLD_Data
                         try
                         {
                             connection.Open();
-                            exists = command.ExecuteScalar() != null;
+                            exists = Convert.ToBoolean(command.ExecuteScalar());
                         }
                         catch
                         {

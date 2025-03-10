@@ -37,6 +37,18 @@ namespace DVLD_API.Controllers
             return Ok(AppDTO);
         }
 
+        [HttpGet("Application/{ApplicationID}/IsExistsByID")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult ApplicationIsExist(int ApplicationID)
+        {
+            if (ApplicationID < 0) return BadRequest($"Not Accepted ID {ApplicationID}");
+
+            bool IsExist = clsApplication.IsApplicationExist(ApplicationID);
+
+            return Ok(IsExist);
+        }
+
         [HttpPost("Add", Name = "AddApplication")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

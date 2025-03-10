@@ -79,9 +79,20 @@ namespace DVLD_Businuss
 
         }
 
+
         public static List<clsApplicationsDTO> GetAllApplications()
         {
             return clsDataApplications.GetAllApplications();
+        }
+
+        public static clsApplication GetBaseApplication(int ApplicationID)
+        {
+            clsApplicationsDTO applicationsDTO = clsDataApplications.GetApplicationByID(ApplicationID);
+
+            if (applicationsDTO != null)
+                return new clsApplication(applicationsDTO, enMode.Update);
+            else
+                return null;
         }
 
         private bool _AddNewApplication()
@@ -98,36 +109,6 @@ namespace DVLD_Businuss
         private bool _UpdateApplication()
         {
             return (clsDataApplications.UpdateApplication(ApplicationDTO));
-        }
-
-        public static clsApplication GetBaseApplication(int ApplicationID)
-        {
-            clsApplicationsDTO applicationsDTO = clsDataApplications.GetApplicationByID(ApplicationID);
-
-            if (applicationsDTO != null)
-                return new clsApplication(applicationsDTO, enMode.Update);
-            else
-                return null;
-        }
-
-        public bool Cancel()
-        {
-            return clsDataApplications.UpdateStatus(this.ApplicationID, (short)enApplicationStatus.Canceled);
-        }
-
-        public bool SetComplete()
-        {
-            return clsDataApplications.UpdateStatus(this.ApplicationID, (short)enApplicationStatus.Complete);
-        }
-
-        public static bool Cancel(int AppID)
-        {
-            return clsDataApplications.UpdateStatus(AppID, (short)enApplicationStatus.Canceled);
-        }
-
-        public static bool SetComplete(int AppID)
-        {
-            return clsDataApplications.UpdateStatus(AppID, (short)enApplicationStatus.Complete);
         }
 
         public bool Save()
@@ -158,6 +139,26 @@ namespace DVLD_Businuss
         {
             return clsDataApplications.DeleteApplication(BaseAppID);
         }
+
+
+        public bool Cancel()
+        {
+            return clsApplication.Cancel(this.ApplicationID);
+        }
+        public static bool Cancel(int AppID)
+        {
+            return clsDataApplications.UpdateStatus(AppID, (short)enApplicationStatus.Canceled);
+        }
+
+        public bool SetComplete()
+        {
+            return clsApplication.SetComplete(this.ApplicationID);
+        }
+        public static bool SetComplete(int AppID)
+        {
+            return clsDataApplications.UpdateStatus(AppID, (short)enApplicationStatus.Complete);
+        }
+
 
         public static bool IsApplicationExist(int ApplicationID)
         {

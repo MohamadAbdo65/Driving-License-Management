@@ -20,6 +20,23 @@ namespace DVLD_API.Controllers
             return Ok(applications);
         }
 
+        [HttpGet("ByID/{ApplicationID}", Name = "GetApplicationByID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<clsApplicationsDTO> GetApplicationByID(int ApplicationID)
+        {
+            if (ApplicationID < 0) return BadRequest($"Not Accepted ID : {ApplicationID}");
+
+            clsApplication application = clsApplication.GetBaseApplication(ApplicationID);
+
+            if (application == null) return NotFound($"Application with ID : {ApplicationID} Not found");
+
+            clsApplicationsDTO AppDTO = application.ApplicationDTO;
+
+            return Ok(AppDTO);
+        }
+
         [HttpPost("Add", Name = "AddApplication")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

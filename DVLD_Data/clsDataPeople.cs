@@ -241,12 +241,13 @@ namespace DVLD_Data
             {
                 using (SqlCommand command = new SqlCommand("SP_People_IsExist_ID", connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@PersonID", PersonID);
 
                     try
                     {
                         connection.Open();
-                        IsFound = ((string)command.ExecuteScalar() != null) ? true : false;
+                        IsFound = (Convert.ToString(command.ExecuteScalar()) != null) ? true : false;
                     }
                     catch { }
                 }

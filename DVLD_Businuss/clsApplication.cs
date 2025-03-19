@@ -158,8 +158,6 @@ namespace DVLD_Businuss
             return clsDataApplications.UpdateStatus(AppID, (short)enApplicationStatus.Complete);
         }
 
-
-
         public static bool IsApplicationExist(int ApplicationID)
         {
             return clsDataApplications.ApplicationIsExist(ApplicationID);
@@ -174,6 +172,8 @@ namespace DVLD_Businuss
         {
             return clsApplication.DoesPersonHaveActiveApp(this.ApplicantPersonID , ApplicationTypeID);
         }
+
+
 
         public static int GetActiveApplicationID(int PersonID, clsApplication.enApplicationType AppType)
         {

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DVLD_Businuss;
 using DVLD_Data;
+using System;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_API.Controllers
 {
@@ -49,6 +51,23 @@ namespace DVLD_API.Controllers
             return Ok(IsExist);
         }
 
+        [HttpGet("DoesPersonHaveActiveApplication" , Name = "DoesPersonHaveActiveApplicationSameType")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult DoesPersonHaveActiveApplicationSameType(int PersonID , int ApplicationTypeID)
+        {
+            if (PersonID < 0 || ApplicationTypeID < 0 || ApplicationTypeID > 8 || ApplicationTypeID == 7)
+                return BadRequest($"Not Accepted Values");
+
+            if (!clsPerson.PersonIsExist(PersonID)) return NotFound($"Person with ID : {PersonID} is Not found.");
+
+            bool Result = clsApplication.DoesPersonHaveActiveApp(PersonID , ApplicationTypeID);
+
+            return Ok(Result);
+        }
+
+
         [HttpPost("Add", Name = "AddApplication")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -79,6 +98,9 @@ namespace DVLD_API.Controllers
 
             return CreatedAtRoute("GetApplicationByID" , new {ID = applications.ApplicationID} , applications);
         }
+
+
+
 
         [HttpPut("Update", Name = "UpdateApplicationByID")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -134,6 +156,9 @@ namespace DVLD_API.Controllers
 
             return Ok("Completed successfully");
         }
+
+
+
 
         [HttpDelete("DeleteApplication", Name = "DeleteApplicationByID")]
         [ProducesResponseType(StatusCodes.Status200OK)]

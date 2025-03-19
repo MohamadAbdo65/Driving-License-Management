@@ -140,7 +140,6 @@ namespace DVLD_Businuss
             return clsDataApplications.DeleteApplication(BaseAppID);
         }
 
-
         public bool Cancel()
         {
             return clsApplication.Cancel(this.ApplicationID);
@@ -158,6 +157,7 @@ namespace DVLD_Businuss
         {
             return clsDataApplications.UpdateStatus(AppID, (short)enApplicationStatus.Complete);
         }
+
 
 
         public static bool IsApplicationExist(int ApplicationID)

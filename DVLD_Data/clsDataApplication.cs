@@ -313,7 +313,7 @@ namespace DVLD_Data
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@AppID", AppID);
                         command.Parameters.AddWithValue("@NewStatus", NewStatus);
-                        command.Parameters.AddWithValue("@LastDate", DateTime.Now);
+
 
                         try
                         {

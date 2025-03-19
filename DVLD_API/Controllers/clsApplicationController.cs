@@ -109,6 +109,31 @@ namespace DVLD_API.Controllers
             return Ok(application.ApplicationDTO);
         }
 
+        [HttpPut("CancelApplication" , Name = "CancelApplicationByID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult Cancel(int ApplicationID)
+        {
+            if (ApplicationID < 0) return BadRequest($"Not Accepted ID {ApplicationID}");
+
+            if(!clsApplication.Cancel(ApplicationID)) return NotFound($"Application with ID : {ApplicationID} Not found");
+
+            return Ok("Canceled successfully");
+        }
+
+        [HttpPut("SetCompleteApplication", Name = "SetCompleteApplicationByID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult SetComplete(int ApplicationID)
+        {
+            if (ApplicationID < 0) return BadRequest($"Not Accepted ID {ApplicationID}");
+
+            if (!clsApplication.SetComplete(ApplicationID)) return NotFound($"Application with ID : {ApplicationID} Not found");
+
+            return Ok("Completed successfully");
+        }
 
         [HttpDelete("DeleteApplication", Name = "DeleteApplicationByID")]
         [ProducesResponseType(StatusCodes.Status200OK)]

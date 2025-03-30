@@ -175,14 +175,14 @@ namespace DVLD_Businuss
 
 
 
-        public static int GetActiveApplicationID(int PersonID, clsApplication.enApplicationType AppType)
+        public static int GetActiveApplicationIDForPerson(int PersonID, clsApplication.enApplicationType AppType)
         {
             return clsDataApplications.GetActiveApplicationID(PersonID, (int)AppType);
         }
 
-        public int GetActiveApplicationTypeID(clsApplication.enApplicationType ApplicationType)
+        public int GetActiveApplicationIDForPerson(clsApplication.enApplicationType ApplicationType)
         {
-            return clsDataApplications.GetActiveApplicationID(this.ApplicantPersonID, (int)ApplicationType);
+            return clsApplication.GetActiveApplicationIDForPerson(this.ApplicantPersonID, ApplicationType);
         }
 
         public static int GetActiveApplicationTypeIDForLicense(int PersonId, clsApplication.enApplicationType ApplicationType, int LicenseClassID)

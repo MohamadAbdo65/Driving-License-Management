@@ -39,7 +39,7 @@ namespace DVLD_API.Controllers
             return Ok(AppDTO);
         }
 
-        [HttpGet("Application/{ApplicationID}/IsExistsByID")]
+        [HttpGet("Application/IsExistsByID/{ApplicationID}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult ApplicationIsExist(int ApplicationID)
@@ -63,6 +63,22 @@ namespace DVLD_API.Controllers
             if (!clsPerson.PersonIsExist(PersonID)) return NotFound($"Person with ID : {PersonID} is Not found.");
 
             bool Result = clsApplication.DoesPersonHaveActiveApp(PersonID , ApplicationTypeID);
+
+            return Ok(Result);
+        }
+
+        [HttpGet("GetActiveApplicationID" , Name = "GetActiveApplicationIDForPerson")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult GetActiveApplicationIDForPerson(int PersonID , int ApplicationTypeID)
+        {
+            if (PersonID < 0 || ApplicationTypeID < 0 || ApplicationTypeID > 8 || ApplicationTypeID == 7)
+                return BadRequest($"Not Accepted Values");
+
+            if (!clsPerson.PersonIsExist(PersonID)) return NotFound($"Person with ID : {PersonID} is Not found.");
+                        
+            int Result = clsApplication.GetActiveApplicationIDForPerson(PersonID, (clsApplication.enApplicationType)ApplicationTypeID);
 
             return Ok(Result);
         }
